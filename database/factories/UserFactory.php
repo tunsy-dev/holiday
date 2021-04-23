@@ -22,15 +22,15 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-  
+
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'email_verified_at' => now(),
+            'email_verified_at' => null,
             'password' => bcrypt('password'), // password
             'remember_token' => Str::random(10),
             'hours_worked_day' => 7.5,
-            'manager_id' => $this->faker->numberBetween( $min = 1, $max= 3),
+            'manager_id' => $this->faker->numberBetween( $min = 2, $max= 3),
             'authority_level' => 0,
         ];
     }

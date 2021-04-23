@@ -23,12 +23,10 @@ class AllowanceFactory extends Factory
      */
     public function definition()
     {
-    
+
         return [
-            'name' => $this->faker->name,
-            'year' => Carbon::now(),                    
+            'year' => 2021,
             'number_hours_year' => 180,
-            'user_id' => User::factory(),        
         ];
     }
 }

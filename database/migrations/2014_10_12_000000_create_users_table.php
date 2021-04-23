@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->unsignedBigInteger('hours_worked_day');
+            $table->double('hours_worked_day');
             $table->string('profile_picture_url')->nullable();
             $table->unsignedBigInteger('manager_id');
             $table->integer('authority_level')->default(0);
