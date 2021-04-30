@@ -41,11 +41,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $appends = [
+            'current_allowance'
+    ];
+
     public function allowances () {
         return $this->hasMany(Allowance::class);
     }
+    public function this_years_allowances() {
+        return $this->hasMany(Allowance::class)->where('year',2021);
+    }
+
+    public function getCurrentAllowanceAttribute()
+    {
+        return $this->this_years_allowances->first()->number_hours_year;
+    }
+
     public function manager () {
-        return $this->belongsTo(User::class, 'id', 'manager_id');
+        return $this->belongsTo(User::class, 'manager_id', 'id');
     }
     public function employees () {
         return $this->hasMany(User::class, 'manager_id', 'id');

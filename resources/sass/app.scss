@@ -1,0 +1,67 @@
+// Bootstrap
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+body{
+    width: 100%;
+    background: white;
+    // min-height: 100%;
+    box-sizing: border-box;
+   
+}
+
+.container{
+    margin-top: 5em;
+    background: rgba(255, 255, 255, 0.3);
+    width:90%;
+    // height: auto;
+    border-radius: 25px;
+
+.container-top {
+    padding-top: 2em;
+   
+    width: 100%;
+
+    .left{
+        
+        font-size: 18px;
+        .current-allowance {
+            margin-top: 3em;
+            margin-bottom: 1em;
+            
+        } 
+        .amount-left{
+
+        } 
+    }
+    .right{
+
+        margin-right: 2em;
+        float: right;
+
+           img{ 
+               width: 200px;
+               height: 200px;
+               border-radius: 30%;
+           }
+       
+    }
+}
+    .container-bottom{
+        padding-top:1em;
+
+        .table-auto{
+            
+        }
+    }
+    .container-top-form{
+        margin-top: 2em;
+        width: 100%;
+    }
+}

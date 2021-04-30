@@ -18,5 +18,13 @@ return [
         3 => 'Admin'
     ],
 
+    'status' => [
+        0 => 'Requested',
+        1 => 'Request change',
+        2 => 'Request cancellation',
+        3 => 'Declined',
+        4 => 'Accepted',
+        5 => 'Cancelled'
+    ]
 
 ];
