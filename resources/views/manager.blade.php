@@ -45,13 +45,14 @@
       <td>{{$user['hours_worked_day']}}</td>
       <td>{{$user['manager_name']}}</td>
       <td>{{$user['authority_level']}}</td>
-    <td><form action="manager/employee/show" method="GET">
-        @csrf
-        <input type="hidden" name="user_id" value="{{$user['id']}}"/>
-        <button class="btn btn-outline-secondary" type="submit" value= "UPDATE" href="#">view</button>
-        </form></td>
+      <td><a href="manager/employee/{{$user['id']}}" class="btn btn-outline-secondary">View</a>
+{{--    <td><form action="manager/employee/show" method="GET">--}}
+{{--        @csrf--}}
+{{--        <input type="hidden" name="user_id" value="{{$user['id']}}"/>--}}
+{{--        <button class="btn btn-outline-secondary" type="submit" value= "UPDATE" href="#">view</button>--}}
+{{--        </form></td>--}}
 
-    </tr>
+{{--    </tr>--}}
   @endforeach
 
 

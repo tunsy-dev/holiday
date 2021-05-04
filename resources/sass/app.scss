@@ -13,7 +13,7 @@ body{
     background: white;
     // min-height: 100%;
     box-sizing: border-box;
-   
+
 }
 
 .container{
@@ -25,39 +25,40 @@ body{
 
 .container-top {
     padding-top: 2em;
-   
+
     width: 100%;
 
     .left{
-        
+
         font-size: 18px;
         .current-allowance {
             margin-top: 3em;
             margin-bottom: 1em;
-            
-        } 
+
+        }
         .amount-left{
 
-        } 
+        }
     }
     .right{
 
         margin-right: 2em;
         float: right;
 
-           img{ 
+           img{
                width: 200px;
                height: 200px;
                border-radius: 30%;
+               object-fit: cover;
            }
-       
+
     }
 }
     .container-bottom{
         padding-top:1em;
 
         .table-auto{
-            
+
         }
     }
     .container-top-form{

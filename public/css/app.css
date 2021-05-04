@@ -10033,6 +10033,8 @@ body {
   width: 200px;
   height: 200px;
   border-radius: 30%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .container .container-bottom {
   padding-top: 1em;

@@ -25,6 +25,10 @@ Route::resource('requests', RequestController::class)->middleware(['auth']);
 Route::resource('admin', UserController::class)->middleware(['admin']);
 Route::resource('manager', ManagerController::class)->middleware((['manager']));
 Route::resource('manager/employee', ManagerEmployeeController::class)->middleware((['manager']));
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

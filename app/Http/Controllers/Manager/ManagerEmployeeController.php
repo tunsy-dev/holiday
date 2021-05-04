@@ -43,16 +43,11 @@ class ManagerEmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $employee)
     {
-
-        $user_id = request('user_id');
-        $user = User::where('id', $user_id)->first();
-
-        $current_allowance = $user->current_allowance;
-        $requests = $user->this_years_allowances->first()->requests->sum('number_of_hours');
-        $requests_table = $user->this_years_allowances->first()->requests->map(function($req){
-
+        $current_allowance = $employee->current_allowance;
+        $requests = $employee->this_years_allowances->first()->requests->sum('number_of_hours');
+        $requests_table = $employee->this_years_allowances->first()->requests->map(function($req){
             return [
                 'reason' => $req->reason,
                 'start_date' => $req->start_date->format('dS M Y'),
@@ -63,20 +58,14 @@ class ManagerEmployeeController extends Controller
             ];
         });
 
-
+        //Bad practice
+        $user = $employee;
         $hours_left = $current_allowance - $requests;
         $status_change = config('enums.status');
-        //Just doing this one for now
-        return view('manager-employee', [
 
-            'requests' => $requests,
-            'requests_table' => $requests_table,
-            'user' => $user,
-            'current_allowance' => $current_allowance,
-            'hours_left' => $hours_left,
-            'status_change' => $status_change
-            // 'total_allowance' => $total_allowance
-        ] );
+
+
+        return view('manager-employee',compact('requests','requests_table','user','current_allowance','hours_left','status_change'));
 
 
     }

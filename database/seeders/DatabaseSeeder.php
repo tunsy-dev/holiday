@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $user->password = bcrypt('depot1');
         $user->hours_worked_day = 7.5;
         $user->authority_level =  array_flip(config('enums.authority_level'))['Admin'];
-        $user->manager_id = 1;
+        $user->manager_id = 1; 
         $user->save();
         //create 10 users
         User::factory(10)->hasAllowances()->create();
